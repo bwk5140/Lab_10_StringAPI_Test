@@ -11,8 +11,10 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.fail;
 
-public class StringAPITest {
+public class StringAPITest_Old
+{
   private WebDriver driver;
+  private String baseUrl;
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
   JavascriptExecutor js;
@@ -23,6 +25,7 @@ public class StringAPITest {
     options.addArguments("--start-maximized");
     options.addArguments("--remote-allow-origins=*");
     driver = new ChromeDriver(options);
+    baseUrl = "https://www.google.com/";
     driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     js = (JavascriptExecutor) driver;
   }
